@@ -3,6 +3,7 @@ class UI {
         this.profile = document.querySelector("#profile");
     }
     showProfile(user){
+      this.clearAlert();
         this.profile.innerHTML = `
         <div class="card card-body mb-3">
         <div class="row">
@@ -28,4 +29,26 @@ class UI {
         `;
 
     }
+    clearProfile(){
+        this.profile.innerHTML = "";
+    }
+
+    showAlert(message, className){
+        this.clearAlert();
+        this.clearProfile();
+        let div = document.createElement("div");
+        div.className = className;
+        div.appendChild(document.createTextNode(message));
+        let container = document.querySelector(".searchContainer");
+        let search = document.querySelector(".search");
+        container.insertBefore(div, search);
+    }
+
+    clearAlert(){
+        let currentAlert = document.querySelector(".alert");
+        if(currentAlert){
+            currentAlert.remove();
+        }
+    }
+
 }
