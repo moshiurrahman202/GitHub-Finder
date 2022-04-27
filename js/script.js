@@ -16,12 +16,12 @@ searchBtn.addEventListener("click", (e) =>{
                 ui.showAlert("User Not Found!", "alert alert-danger");
             }else{
                 // Show Profile
-                // console.log(data);
                 ui.showProfile(data);
+
             }
         })
         
-    }else {
+    } else {
         // Clear Prolile
         ui.clearProfile();
     }
