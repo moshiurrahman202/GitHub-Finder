@@ -17,6 +17,10 @@ searchBtn.addEventListener("click", (e) =>{
             }else{
                 // Show Profile
                 ui.showProfile(data);
+                fetch((`https://api.github.com/users/${userText}/repos`))
+                .then(result => result.json())
+                .then(repos => ui.showRepos(repos))
+                
 
             }
         })
